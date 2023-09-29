@@ -1,0 +1,35 @@
+<div class="container">
+<h3>Users List</h3>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id.</th>
+        <th scope="col">firstname</th>
+        <th scope="col">lastname</th>
+        <th scope="col">profilePic</th>
+        <th scope="col">description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="showButtons(user, $event)">  
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>
+          <img src="{{user.profilePic}}" alt="">
+        </td>
+        <td>{{user.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> 
+
+  <ng-container *ngIf="selectPost" >
+    <div class="list-group" [ngStyle]="{'position': 'fixed', 'top.px': yPos, 'left.px': xPos}">
+        <button type="button" class="list-group-item list-group-item-action custom-btn" (click)="showDetails()">Details</button>
+        
+        
+      </div>
+  </ng-container>
+
+  
